@@ -48,8 +48,8 @@ $(document).ready(function () {
     // Map //
     /////////
     app.router.register(['/', '#', '#/'], function (urlParts) {
-        // app.views.mapView.show();
-        app.views.headerView.show();
+        app.views.mapView.show();
+        // app.views.headerView.show();
     });
 
     ///////////////////
