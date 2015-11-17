@@ -27,7 +27,7 @@ app.views.headerView = (function() {
 	 * @return {[type]} [description]
 	 */
 	function setupHandlers() {
-		$('.back-to-map').bind('touchend', function(e) {
+		$('.back-to-map').bind('touchend click', function(e) {
 			e.preventDefault();
 			app.views.mapView.show();
 		});

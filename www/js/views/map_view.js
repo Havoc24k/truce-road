@@ -61,7 +61,8 @@ app.views.mapView = (function() {
 
 		// Create a map and center it on Manhattan.
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 13,
+			zoom: 11,
+			minZoom: 11,
 			center: {
 				lat: 37.883447,
 				lng: 21.385127
