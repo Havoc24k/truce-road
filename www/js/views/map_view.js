@@ -61,8 +61,8 @@ app.views.mapView = (function() {
 
 		// Create a map and center it on Manhattan.
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 11,
-			minZoom: 11,
+			zoom: 9,
+			minZoom: 9,
 			center: {
 				lat: 37.883447,
 				lng: 21.385127
@@ -75,7 +75,7 @@ app.views.mapView = (function() {
 		var centerControl = new CenterControl(centerControlDiv, map);
 
 		centerControlDiv.index = 1;
-		map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+		map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(centerControlDiv);
 
 		// Create a renderer for directions and bind it to the map.
 		var directionsDisplay = new google.maps.DirectionsRenderer({
@@ -105,8 +105,6 @@ app.views.mapView = (function() {
 		// Retrieve the start and end locations and create a DirectionsRequest using
 		// WALKING directions.
 		directionsService.route({
-			// origin: document.getElementById('start').value,
-			// destination: document.getElementById('end').value,
 			origin: "37.883447,21.385127",
 			destination: "37.640531,21.630084",
 			travelMode: google.maps.TravelMode.WALKING
