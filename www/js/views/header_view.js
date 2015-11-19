@@ -58,10 +58,12 @@ app.views.headerView = (function() {
 				"phones": [{
 					"title": "Χρήσιμες Πληροφορίες & Τηλέφωνα Νομού Ηλείας",
 					"url": "http://pirgiotis.gr/index.php?option=com_content&view=article&id=5592&Itemid=205"
-				}, {
-					"title": "Κατηγορίες προσωπικών εξυπηρετήσεων / Personal Services",
-					"url": "http://eventdrop.net/TheRouteOfTruce/Route-Personal%20Srvices.pdf"
-				}],
+				}
+				// {
+				// 	"title": "Κατηγορίες προσωπικών εξυπηρετήσεων / Personal Services",
+				// 	"url": "http://eventdrop.net/TheRouteOfTruce/Route-Personal%20Srvices.pdf"
+				// }
+				],
 				"regions": [{
 					"name": "ΞΕΝΟΔΟΧΕΙΑ ΚΟΝΤΑ ΣΤΗΝ ΑΡΧΑΙΑ ΟΛΥΜΠΙΑ",
 					"hotels": [{
