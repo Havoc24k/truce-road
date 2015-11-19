@@ -51,6 +51,10 @@ app.views.mapView = (function() {
 		controlUI.addEventListener('touchend', function() {
 			app.views.headerView.show();
 		});
+
+		controlUI.addEventListener('click', function() {
+			app.views.headerView.show();
+		});
 	}
 
 	function _initMap() {
