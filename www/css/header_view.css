@@ -6,3 +6,26 @@ dl.tabs dd {
     float: none !important;
     display: inline-block;
 }
+
+.section-title {
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.poi-text {
+
+}
+
+.poi-links-title {
+    font-weight: bolder;
+}
+
+.hotel-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.rating > span:before {
+   content: "\2605";
+   position: absolute;
+}
