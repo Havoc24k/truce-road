@@ -66,50 +66,79 @@
   <div class="row">
     <div class="large-12 columns">
       <dl class="tabs" data-tab>
-        <dd class="active"><a href="#panel1">Ιστορια</a></dd>
-        <dd><a href="#panel2">Σημεία</a></dd>
+        <dd><a href="#panel1">Ιστορία</a></dd>
+        <dd class="active"><a href="#panel2">Σημεία</a></dd>
       </dl>
       <div class="tabs-content">
-        <div class="content active" id="panel1">
+        <div class="content" id="panel1">
         <div class="row">
           <div class="small-6 small-centered columns">
             <a href="#" class="button back-to-map">Επιστροφή στον χάρτη</a>
           </div>
         </div>
+
+          <% _.each(rc.data.tab1.poi, function (poiData) { %>
           <div class="row">
             <div class="large-12 columns">
-              <h2 style="font-weight: bolder">Αρχαία Ήλιδα</h2>
-              <p>Ένα από τα σημαντικότερα κέντρα της Πελοποννήσου στην αρχαιότητα, έφθασε σε ακμή τα ρωμαϊκά χρόνια, οπότε και κτίστηκε ένας μεγάλος αριθμός κτιρίων και κυρίως αθλητικών εγκαταστάσεων αφού στην Ήλιδα συνέρεε πάντα το πλήθος των αθλητών για προπόνηση, ένα μήνα πριν από τους Ολυμπιακούς Αγώνες. Ήταν η διοργανώτρια πόλη των Ολυμπιακών Αγώνων και πρωτεύουσα των Ηλείων.</p>
+              <h2 class="section-title"><%= poiData.title %></h2>
+              <p class="poi-text"><%= poiData.text %></p>
+              <br/>
+              <h2 class="poi-links-title">Συνδεσμοι</h2>
+              <ul>
+                <% _.each(poiData.links, function (linkData) { %>
+                  <li><a target="_blank" href="<%= linkData.url %>"><%= linkData.title %></a></li>
+                  <% })%>
+              </ul>
+              <br/>
+              <br/>
             </div>
           </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <h2 style="font-weight: bolder">Πύργος</h2>
-              <p>Στον ίδιο χώρο που βρίσκεται ο Πύργος σήμερα, τοποθετείται η Αρχαία πόλη Δυσπόντιο. Στα περίχωρα του Πύργου ήταν η αρχαία πόλη Λέτρινα, απ' όπου είχε πάρει και την ονομασία του σαν Δήμος Λετρίνων μέχρι την Δεκαετία του 1980. Η ονομασία της πόλης προέρχεται από τον πύργο που είχε κατασκευάσει, το 1512, στην θέση του Επαρχείου ο Μπέης της ευρύτερης περιοχής Γεώργιος Τσερνωτάς.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <h2 style="font-weight: bolder">Αρχαία Ολυμπία</h2>
-              <p>Η Ολυμπία, υπήρξε το πιο δοξασμένο ιερό της αρχαίας Ελλάδας αφιερωμένο στον Δία, πατέρα των θεών και των ανθρώπων. Ήταν ο τόπος διεξαγωγής των Ολυμπιακών Αγώνων οι οποίοι τελούνταν στο πλαίσιο των Ολυμπίων, της πιο σημαντικής εορτής των Ελλήνων κατά το μεγαλύτερο διάστημα της αρχαιότητας.</p>
-            </div>
-          </div>
+          <% })%>
+
         </div>
-        <div class="content" id="panel2">
+        <div class="content active" id="panel2">
         <div class="row">
           <div class="small-6 small-centered columns">
             <a href="#" class="button back-to-map">Επιστροφή στον χάρτη</a>
           </div>
         </div>
         <div class="row">
-            <div class="large-12 columns">
-              <h2 style="font-weight: bolder">Χρήσιμες Πληροφορίες Νομού Ηλείας</h2>
-              <p>Μουσείο Ολυμπίας: 26240-22742</p>
-              <p>Μουσείο Ολυμπιακών Αγώνων: 26240-22544</p>
-              <p>Γραφείο Τουρισμού Ολυμπίας: 26240-23100</p>
-              <p>Επικούρειος Απόλλωνας: 26260-22254</p>
-            </div>
+          <div class="large-12 columns">
+            <h2 class="section-title">Χρήσιμα τηλέφωνα</h2>
+            <ul>
+                <% _.each(rc.data.tab2.phones, function (phoneLinkData) { %>
+                  <li><a target="_blank" href="<%= phoneLinkData.url %>"><%= phoneLinkData.title %></a></li>
+                  <% })%>
+              </ul>
           </div>
+        </div>
+        <br />
+        <br />
+
+        <% _.each(rc.data.tab2.regions, function (regionData) { %>
+        <div class="row">
+          <div class="large-12 columns">
+            <h2 class="section-title"><%= regionData.name %></h2>
+            <br />
+            <br />
+            <% _.each(regionData.hotels, function (hotelData) { %>
+            <label class="hotel-name"><%= hotelData.name %></label>
+            <label><a href="<%= hotelData.url %>" target="_blank"><%= hotelData.url %></a></label>
+            <label><%= hotelData.tel %></label>
+            <!-- <label><%= hotelData.rating %></label> -->
+            <div class="rating">
+            <% if (hotelData.rating > 0) { %>
+            <%= Array(hotelData.rating + 1).join("<span>☆</span>")  %>
+            <% }%>
+            </div>
+            <hr>
+            <% })%>
+          </div>
+        </div>
+        <br />
+        <br />
+        <% })%>
+
         </div>
         </div>
       </div>
