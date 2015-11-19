@@ -42,6 +42,16 @@ app.views.headerView = (function() {
 						"title": "ΔΗΜΟΣ ΑΡΧΑΙΑΣ ΟΛΥΜΠΙΑΣ",
 						"url": "http://www.arxaiaolympia.gov.gr/portal/page/portal/municipality/Home"
 					}]
+				}, {
+					"title": "Περισσότερες πληροφορίες",
+					"text": "",
+					"links": [{
+						"title": "Ελληνική Ολυμπιακή Επιτροπή",
+						"url": "http://www.hoc.gr/"
+					}, {
+						"title": "Official website of the Olympic Movement",
+						"url": "http://www.olympic.org/"
+					}]
 				}]
 			},
 			tab2: {
