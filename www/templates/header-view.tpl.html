@@ -44,7 +44,8 @@
             <h2 class="section-title">Χρήσιμα τηλέφωνα</h2>
             <ul>
                 <% _.each(rc.data.tab2.phones, function (phoneLinkData) { %>
-                  <li><a target="_blank" href="<%= phoneLinkData.url %>"><%= phoneLinkData.title %></a></li>
+                  <!--<li><a target="_blank" href="<%= phoneLinkData.url %>"><%= phoneLinkData.title %></a></li>-->
+                  <li><a href="#" onclick="window.open('<%= phoneLinkData.url %>', '_system')"><%= phoneLinkData.title %></a></li>
                   <% })%>
               </ul>
           </div>
