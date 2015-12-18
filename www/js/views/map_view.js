@@ -3,9 +3,10 @@
  * MapView
  */
 
-app.views.mapView = (function() {
+app.views.mapView = (function () {
 	var _CONTAINER_NAME = 'map-view';
 	var _page;
+	var infoWindow;
 
 	/**
 	 * [render description]
@@ -48,11 +49,11 @@ app.views.mapView = (function() {
 		controlText.innerHTML = 'Πληροφορίες';
 		controlUI.appendChild(controlText);
 
-		controlUI.addEventListener('touchend', function() {
+		controlUI.addEventListener('touchend', function () {
 			app.views.headerView.show();
 		});
 
-		controlUI.addEventListener('click', function() {
+		controlUI.addEventListener('click', function () {
 			app.views.headerView.show();
 		});
 	}
@@ -72,6 +73,11 @@ app.views.mapView = (function() {
 				lng: 21.385127
 			},
 		});
+
+		/*infoWindow = new google.maps.InfoWindow({
+			content: contentString,
+			maxWidth: 200
+		});*/
 
 		// Create the DIV to hold the control and call the CenterControl() constructor
 		// passing in this DIV.
@@ -93,7 +99,7 @@ app.views.mapView = (function() {
 		calculateAndDisplayRoute(
 			directionsDisplay, directionsService, markerArray, stepDisplay, map);
 		// Listen to change events from the start and end lists.
-		var onChangeHandler = function() {
+		var onChangeHandler = function () {
 			calculateAndDisplayRoute(
 				directionsDisplay, directionsService, markerArray, stepDisplay, map);
 		};
@@ -114,7 +120,7 @@ app.views.mapView = (function() {
 			origin: "37.883447,21.385127",
 			destination: "37.640531,21.630084",
 			travelMode: google.maps.TravelMode.WALKING
-		}, function(response, status) {
+		}, function (response, status) {
 			// Route the directions and pass the response to a function to create
 			// markers for each step.
 			if (status === google.maps.DirectionsStatus.OK) {
@@ -139,15 +145,27 @@ app.views.mapView = (function() {
 			marker.setPosition(myRoute.steps[i].start_location);
 			attachInstructionText(
 				stepDisplay, marker, myRoute.steps[i].instructions, map);
+			var contentString = '<div id="content">' +
+				'<p>'+myRoute.steps[i].instructions+'</p>'+
+				'<a href="#detailsView">' +
+				'View Details >' +
+				'</a>' +
+				'</div>';
+			var infoWindow = new google.maps.InfoWindow({
+				content: contentString,
+				maxWidth: 200
+			});
+			marker.infoObj = infoWindow;
 		}
 	}
 
 	function attachInstructionText(stepDisplay, marker, text, map) {
-		google.maps.event.addListener(marker, 'click', function() {
+		google.maps.event.addListener(marker, 'click', function () {
 			// Open an info window when the marker is clicked on, containing the text
 			// of the step.
-			stepDisplay.setContent(text);
-			stepDisplay.open(map, marker);
+			//stepDisplay.setContent(text);
+			//stepDisplay.open(map, marker);
+			marker.infoObj.open(map, marker);
 		});
 	}
 
@@ -223,7 +241,7 @@ app.views.mapView = (function() {
 		 * [show description]
 		 * @return {[type]} [description]
 		 */
-		show: function() {
+		show: function () {
 			// render
 			_page = render({});
 
@@ -252,7 +270,7 @@ app.views.mapView = (function() {
 		 * [hide description]
 		 * @return {[type]} [description]
 		 */
-		hide: function() {
+		hide: function () {
 			$('#' + _CONTAINER_NAME).empty();
 		}
 	};

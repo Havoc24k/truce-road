@@ -1,0 +1,85 @@
+<script type="text/template" class="header-view">
+<div class="container">
+  <div class="row">
+    <div class="large-12 columns">
+      <dl class="tabs" data-tab>
+        <dd class="active"><a href="#panel1">Ιστορία</a></dd>
+        <dd><a href="#panel2">Σημεία</a></dd>
+      </dl>
+      <div class="tabs-content">
+        <div class="content active" id="panel1">
+        <div class="row">
+          <div class="small-6 small-centered columns">
+            <a href="#" class="button back-to-map">Επιστροφή στον χάρτη</a>
+          </div>
+        </div>
+
+          <% _.each(rc.data.tab1.poi, function (poiData) { %>
+          <div class="row">
+            <div class="large-12 columns">
+              <h2 class="section-title"><%= poiData.title %></h2>
+              <p class="poi-text"><%= poiData.text %></p>
+              <br/>
+              <h2 class="poi-links-title">Συνδεσμοι</h2>
+              <ul>
+                <% _.each(poiData.links, function (linkData) { %>
+                  <li><a target="_blank" href="<%= linkData.url %>"><%= linkData.title %></a></li>
+                  <% })%>
+              </ul>
+              <br/>
+              <br/>
+            </div>
+          </div>
+          <% })%>
+
+        </div>
+        <div class="content" id="panel2">
+        <div class="row">
+          <div class="small-6 small-centered columns">
+            <a href="#" class="button back-to-map">Επιστροφή στον χάρτη</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <h2 class="section-title">Χρήσιμα τηλέφωνα</h2>
+            <ul>
+                <% _.each(rc.data.tab2.phones, function (phoneLinkData) { %>
+                  <!--<li><a target="_blank" href="<%= phoneLinkData.url %>"><%= phoneLinkData.title %></a></li>-->
+                  <li><a href="#" onclick="window.open('<%= phoneLinkData.url %>', '_system')"><%= phoneLinkData.title %></a></li>
+                  <% })%>
+              </ul>
+          </div>
+        </div>
+        <br />
+        <br />
+
+        <% _.each(rc.data.tab2.regions, function (regionData) { %>
+        <div class="row">
+          <div class="large-12 columns">
+            <h2 class="section-title"><%= regionData.name %></h2>
+            <br />
+            <br />
+            <% _.each(regionData.hotels, function (hotelData) { %>
+            <label class="hotel-name"><%= hotelData.name %></label>
+            <label><a href="<%= hotelData.url %>" target="_blank"><%= hotelData.url %></a></label>
+            <label><%= hotelData.tel %></label>
+            <div class="rating">
+            <% if (hotelData.rating > 0) { %>
+            <%= Array(hotelData.rating + 1).join("<span>☆</span>")  %>
+            <% }%>
+            </div>
+            <hr>
+            <% })%>
+          </div>
+        </div>
+        <br />
+        <br />
+        <% })%>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</script>

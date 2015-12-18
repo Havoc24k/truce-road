@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>True Road</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/pageslider.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/header_view.css">
+    <!--  -->
+
+    <!-- Libraries -->
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/underscore.js"></script>
+    <script type="text/javascript" src="js/libs/underscore.string.js"></script>
+    <script type="text/javascript" src="js/libs/fastclick.js"></script>
+    <script type="text/javascript" src="js/libs/pageslider.js"></script>
+    <script type="text/javascript" src="js/libs/foundation.min.js"></script>
+    <script type="text/javascript" src="js/libs/modernizr.js"></script>
+    <!-- -->
+
+    <!-- Core files -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/cookies.js"></script>
+    <script type="text/javascript" src="js/registry.js"></script>
+    <script type="text/javascript" src="js/views.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/template_engine.js"></script>
+    <script type="text/javascript" src="js/router.js"></script>
+    <!-- -->
+
+    <!-- Models -->
+        <!-- -->
+
+    <!-- Views -->
+    <script type='text/javascript' src='js/views/header_view.js'></script>
+<script type='text/javascript' src='js/views/index_view.js'></script>
+<script type='text/javascript' src='js/views/info_view.js'></script>
+<script type='text/javascript' src='js/views/map_view.js'></script>
+    <!-- -->
+
+    <!-- Main application file, always put last -->
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Templates -->
+        <script type="text/template" class="index-view">
+</script>
+
+<script type="text/template" class="map-view">
+<div id="map"></div>
+</script>
+
+<script type="text/template" class="header-view">
+<div class="container">
+  <div class="row">
+    <div class="large-12 columns">
+      <dl class="tabs" data-tab>
+        <dd class="active"><a href="#panel1">Ιστορία</a></dd>
+        <dd><a href="#panel2">Σημεία</a></dd>
+      </dl>
+      <div class="tabs-content">
+        <div class="content active" id="panel1">
+        <div class="row">
+          <div class="small-6 small-centered columns">
+            <a href="#" class="button back-to-map">Επιστροφή στον χάρτη</a>
+          </div>
+        </div>
+
+          <% _.each(rc.data.tab1.poi, function (poiData) { %>
+          <div class="row">
+            <div class="large-12 columns">
+              <h2 class="section-title"><%= poiData.title %></h2>
+              <p class="poi-text"><%= poiData.text %></p>
+              <br/>
+              <h2 class="poi-links-title">Συνδεσμοι</h2>
+              <ul>
+                <% _.each(poiData.links, function (linkData) { %>
+                  <li><a target="_blank" href="<%= linkData.url %>"><%= linkData.title %></a></li>
+                  <% })%>
+              </ul>
+              <br/>
+              <br/>
+            </div>
+          </div>
+          <% })%>
+
+        </div>
+        <div class="content" id="panel2">
+        <div class="row">
+          <div class="small-6 small-centered columns">
+            <a href="#" class="button back-to-map">Επιστροφή στον χάρτη</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <h2 class="section-title">Χρήσιμα τηλέφωνα</h2>
+            <ul>
+                <% _.each(rc.data.tab2.phones, function (phoneLinkData) { %>
+                  <!--<li><a target="_blank" href="<%= phoneLinkData.url %>"><%= phoneLinkData.title %></a></li>-->
+                  <li><a href="#" onclick="window.open('<%= phoneLinkData.url %>', '_system')"><%= phoneLinkData.title %></a></li>
+                  <% })%>
+              </ul>
+          </div>
+        </div>
+        <br />
+        <br />
+
+        <% _.each(rc.data.tab2.regions, function (regionData) { %>
+        <div class="row">
+          <div class="large-12 columns">
+            <h2 class="section-title"><%= regionData.name %></h2>
+            <br />
+            <br />
+            <% _.each(regionData.hotels, function (hotelData) { %>
+            <label class="hotel-name"><%= hotelData.name %></label>
+            <label><a href="<%= hotelData.url %>" target="_blank"><%= hotelData.url %></a></label>
+            <label><%= hotelData.tel %></label>
+            <div class="rating">
+            <% if (hotelData.rating > 0) { %>
+            <%= Array(hotelData.rating + 1).join("<span>☆</span>")  %>
+            <% }%>
+            </div>
+            <hr>
+            <% })%>
+          </div>
+        </div>
+        <br />
+        <br />
+        <% })%>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+        <!-- Sections -->
+        <section id='index-view' class='index-view'></section>
+<section id='map-view' class='map-view'></section>
+<section id='header-view' class='header-view'></section>
+    </div>
+</body>
+</html>
