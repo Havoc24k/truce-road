@@ -6,5 +6,6 @@ use application\core\App as App;
 App::$views = array(
     'index-view',
     'map-view',
-    'header-view'
+    'header-view',
+    'details-view'
 );

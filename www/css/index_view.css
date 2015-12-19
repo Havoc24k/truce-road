@@ -1,0 +1,28 @@
+/* colors */
+/* index-view */
+div,
+input,
+label,
+textarea,
+li,
+span,
+strong,
+p {
+  font-family: 'noto_sansregular', Arial, sans-serif !important;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.page {
+  overflow: auto;
+}
+.detailLink {
+  color: #009ed6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.back-to-map {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,8 +1,25 @@
+@import "variables";
+
 /* index-view */
+div,input,label,textarea,li,span,strong,p {
+    font-family: @font-family !important;
+}
 ::-webkit-scrollbar {
     display: none;
 }
 
 .page {
     overflow: auto;
+}
+
+.detailLink {
+    color: @bluePal;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.back-to-map {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

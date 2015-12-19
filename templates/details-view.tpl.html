@@ -1,0 +1,21 @@
+<script type="text/template" class="details-view">
+    <div class="container">
+        <div class="row align-middle detailsView">
+            <div class="columns">
+                <button type="button" class="success button back-to-map">< Επιστροφή στο χάρτη</button>
+                <div class="panel">
+                    <h2 class="section-title"><%= rc.data.poiData.title %></h2>
+                    <p class="poi-text"><%= rc.data.poiData.text %></p>
+                </div>
+                <div class="panel2">
+                    <h2 class="section-title">Χρήσιμα τηλέφωνα</h2>
+                    <ul>
+                        <% _.each(rc.data.poiData.phones, function (phoneLinkData) { %>
+                        <li><a href="#" onclick="window.open('<%= phoneLinkData.url %>', '_system')"><%= phoneLinkData.title %></a></li>
+                      <% })%>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

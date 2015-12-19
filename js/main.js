@@ -52,6 +52,14 @@ $(document).ready(function () {
         // app.views.headerView.show();
     });
 
+    /////////
+    // Details //
+    /////////
+    app.router.register(['/details', '#details', '#/details', '#/detailsView'], function (urlParts) {
+        app.views.detailsView.show();
+        // app.views.headerView.show();
+    });
+
     ///////////////////
     // Execute route //
     ///////////////////

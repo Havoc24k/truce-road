@@ -1,5 +1,0 @@
-syntax: glob
-7lwf-mobile.sublime-project
-.hgignore
-7lwf-mobile.sublime-workspace
-www/*
