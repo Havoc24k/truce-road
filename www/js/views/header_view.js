@@ -239,7 +239,7 @@ app.views.headerView = (function() {
 						"url": "",
 						"tel": "6938094255",
 						"rating": 0
-					}, ]
+					} ]
 				}]
 			}
 		};

@@ -5,12 +5,13 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>True Road</title>
 
     <!-- CSS -->
+
     <link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="css/pageslider.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -42,7 +43,8 @@
         <!-- -->
 
     <!-- Views -->
-    <script type='text/javascript' src='js/views/header_view.js'></script>
+    <script type='text/javascript' src='js/views/details_view.js'></script>
+<script type='text/javascript' src='js/views/header_view.js'></script>
 <script type='text/javascript' src='js/views/index_view.js'></script>
 <script type='text/javascript' src='js/views/info_view.js'></script>
 <script type='text/javascript' src='js/views/map_view.js'></script>
@@ -72,7 +74,7 @@
       <div class="tabs-content">
         <div class="content active" id="panel1">
         <div class="row">
-          <div class="small-6 small-centered columns">
+          <div class="small-12 small-centered columns">
             <a href="#" class="button back-to-map">Επιστροφή στον χάρτη</a>
           </div>
         </div>
@@ -98,7 +100,7 @@
         </div>
         <div class="content" id="panel2">
         <div class="row">
-          <div class="small-6 small-centered columns">
+          <div class="small-12 small-centered columns">
             <a href="#" class="button back-to-map">Επιστροφή στον χάρτη</a>
           </div>
         </div>
@@ -147,10 +149,33 @@
 </div>
 </script>
 
+<script type="text/template" class="details-view">
+    <div class="container">
+        <div class="row align-middle detailsView">
+            <div class="columns">
+                <button type="button" class="success button back-to-map">< Επιστροφή στο χάρτη</button>
+                <div class="panel">
+                    <h2 class="section-title"><%= rc.data.poiData.title %></h2>
+                    <p class="poi-text"><%= rc.data.poiData.text %></p>
+                </div>
+                <div class="panel2">
+                    <h2 class="section-title">Χρήσιμα τηλέφωνα</h2>
+                    <ul>
+                        <% _.each(rc.data.poiData.phones, function (phoneLinkData) { %>
+                        <li><a href="#" onclick="window.open('<%= phoneLinkData.url %>', '_system')"><%= phoneLinkData.title %></a></li>
+                      <% })%>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
         <!-- Sections -->
         <section id='index-view' class='index-view'></section>
 <section id='map-view' class='map-view'></section>
 <section id='header-view' class='header-view'></section>
+<section id='details-view' class='details-view'></section>
     </div>
 </body>
 </html>
