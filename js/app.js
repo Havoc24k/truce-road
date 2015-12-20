@@ -42,6 +42,17 @@ app.onDeviceReady = function() {
 };
 
 /**
+ * [receivedEvent description]
+ * @param  {[type]} id [description]
+ * @return {[type]}    [description]
+ */
+app.receivedEvent = function(id) {
+    var parentElement = document.getElementById(id);
+    window.console.log('Received Event: ' + id);
+};
+
+
+/**
  * [initialize description]
  * @return {[type]} [description]
  */
