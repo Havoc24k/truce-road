@@ -20,3 +20,32 @@ app.config = {
     debug: false,
     rpcProxy: 'rpc_proxy.php'
 };
+
+/**
+ * [bindEvents description]
+ * @return {[type]} [description]
+ */
+app.bindEvents = function() {
+    document.addEventListener('deviceready', app.onDeviceReady, false);
+};
+
+/**
+ * [onDeviceReady description]
+ * @return {[type]} [description]
+ */
+app.onDeviceReady = function() {
+    app.receivedEvent('deviceready');
+
+    setTimeout(function() {
+        navigator.splashscreen.hide();
+    }, 1000);
+};
+
+/**
+ * [initialize description]
+ * @return {[type]} [description]
+ */
+app.initialize = function() {
+    app.bindEvents();
+};
+
