@@ -16,7 +16,7 @@
     <title>True Road</title>
 
     <!-- CSS -->
-
+    <link href='https://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic&subset=latin,greek,greek-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="css/pageslider.css">
