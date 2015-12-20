@@ -108,17 +108,17 @@
     <gap:splash src="assets/splash_screens/ios/Default-Portrait~ipad_768x1024.png" gap:platform="ios" width="768" height="1024 "/>
     <gap:splash src="assets/splash_screens/ios/Default-Landscape~ipad_1024x748.png" gap:platform="ios" width="1024" height="768"/>
     <gap:splash src="assets/splash_screens/ios/Default-Portrait@2x~ipad_1536x2048.png" gap:platform="ios" width="1536" height="2048"/>
-    <gap:splash src="assets/splash_screens/ios/Default-Landscape@2x~ipad_2048x1496.png" gap:platform="ios" width="2048" height="1536"/>
+    <gap:splash src="assets/splash_screens/ios/Default-Landscape@2x~ipad_2048x1496.jpg" gap:platform="ios" width="2048" height="1536"/>
     <gap:splash src="assets/splash_screens/ios/Default@2x~iphone_640x960.png"/>
 
     <!-- iPhone 6 -->
     <gap:splash src="assets/splash_screens/ios/Default-750@2x~iphone6-portrait_750x1334.png" gap:platform="ios" width="750" height="1334" />
-    <gap:splash src="assets/splash_screens/ios/Default-1242@3x~iphone6s-portrait_1242x2208.png" gap:platform="ios" width="1242" height="2208" />
+    <gap:splash src="assets/splash_screens/ios/Default-1242@3x~iphone6s-portrait_1242x2208.jpg" gap:platform="ios" width="1242" height="2208" />
     <gap:splash src="assets/splash_screens/ios/Default-1242@3x~iphone6s-landscape_2208x1242.png" gap:platform="ios" width="2208" height="1242" />
 
     <!-- Retina iPad -->
-    <gap:splash src="assets/splash_screens/ios/Default-Portrait@2x~ipad_1536x2048.png" gap:platform="ios" width="1536" height="2048" />
-    <gap:splash src="assets/splash_screens/ios/Default-Landscape@2x~ipad_2048x1536.png" gap:platform="ios" width="2048" height="1536" />
+    <gap:splash src="assets/splash_screens/ios/Default-Portrait@2x~ipad_1536x2048.jpg" gap:platform="ios" width="1536" height="2048" />
+    <gap:splash src="assets/splash_screens/ios/Default-Landscape@2x~ipad_2048x1536.jpg" gap:platform="ios" width="2048" height="1536" />
 
     <!-- OTHER -->
     <gap:splash src="assets/splash_screens/splash_800x1280.jpg" gap:platform="blackberry"/>
