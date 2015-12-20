@@ -42,6 +42,7 @@
   <preference name="disable-cursor" value="true"/>
   <preference name="StatusBarOverlaysWebView" value="true"/>
 
+  <gap:plugin name="cordova-plugin-whitelist" source="npm" />
   <gap:plugin name="cordova-plugin-console" source="npm"/>
   <gap:plugin name="cordova-plugin-device" source="npm"/>
   <gap:plugin name="cordova-plugin-dialogs" source="npm"/>
