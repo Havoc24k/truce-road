@@ -57,8 +57,6 @@
   <gap:plugin name="cordova-plugin-file-transfer" source="npm"/>
   <gap:plugin name="cordova-plugin-geolocation" source="npm"/>
   <!-- <gap:plugin name="org.apache.cordova.file-transfer"/> -->
-  <gap:plugin name="org.apache.cordova.geolocation"/>
-  <gap:plugin name="org.apache.cordova.globalization"/>
 
 
 

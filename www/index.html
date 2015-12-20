@@ -54,7 +54,7 @@
     <!-- Main application file, always put last -->
     <script type="text/javascript" src="js/main.js"></script>
 </head>
-<body>
+<body onload="load();">
     <div class="container">
         <!-- Templates -->
         <script type="text/template" class="index-view">
@@ -178,5 +178,10 @@
 <section id='header-view' class='header-view'></section>
 <section id='details-view' class='details-view'></section>
     </div>
+     <script type="text/javascript">
+        function load(){
+            app.initialize();
+        }
+    </script>
 </body>
 </html>

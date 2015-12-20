@@ -58,12 +58,17 @@
     <!-- Main application file, always put last -->
     <script type="text/javascript" src="js/main.js"></script>
 </head>
-<body>
+<body onload="load();">
     <div class="container">
         <!-- Templates -->
         <?php echo $loader->insertTemplates(); ?>
         <!-- Sections -->
         <?php echo $loader->insertSections(); ?>
     </div>
+     <script type="text/javascript">
+        function load(){
+            app.initialize();
+        }
+    </script>
 </body>
 </html>
