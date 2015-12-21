@@ -158,8 +158,8 @@ app.views.mapView = (function () {
 		directionsService.route({
 			// origin: document.getElementById('start').value,
 			// destination: document.getElementById('end').value,
-			origin: "37.883447,21.385127",
-			destination: "37.640531,21.630084",
+			origin: "37.640531,21.630084",
+			destination: "37.883447,21.385127",
 			//waypoints: _waypoints,
 			optimizeWaypoints: true,
 			travelMode: google.maps.TravelMode.WALKING
@@ -219,12 +219,12 @@ app.views.mapView = (function () {
 				lat: 37.640236,
 				lng: 21.629419
 			},
-			label: "A",
+			label: "T",
 			map: map
 		});
-		attachInstructionText(stepDisplay, marker, myRoute.end_address, map);
+		attachInstructionText(stepDisplay, marker, myRoute.start_address, map);
 		contentString = '<div id="content">' +
-			'<p>' + myRoute.end_address + '</p>' +
+			'<p>' + myRoute.start_address + '</p>' +
 			'<div class="detailLink">' +
 			'Περισσότερες πληροφορίες >' +
 			'</div>' +
@@ -245,12 +245,12 @@ app.views.mapView = (function () {
 				lat: 37.883447,
 				lng: 21.385127
 			},
-			label: "T",
+			label: "A",
 			map: map
 		});
-		attachInstructionText(stepDisplay, marker, myRoute.start_address, map);
+		attachInstructionText(stepDisplay, marker, myRoute.end_address, map);
 		contentString = '<div id="content">' +
-			'<p>' + myRoute.start_address + '</p>' +
+			'<p>' + myRoute.end_address + '</p>' +
 			'<div class="detailLink">' +
 			'Περισσότερες πληροφορίες >' +
 			'</div>' +
