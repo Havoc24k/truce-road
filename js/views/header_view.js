@@ -2,7 +2,7 @@
  * HeaderView
  */
 
-app.views.headerView = (function() {
+app.views.headerView = (function () {
 	var _CONTAINER_NAME = 'header-view';
 	var _page;
 
@@ -56,8 +56,8 @@ app.views.headerView = (function() {
 			},
 			tab2: {
 				"phones": [{
-					"title": "Χρήσιμες Πληροφορίες & Τηλέφωνα Νομού Ηλείας",
-					"url": "http://pirgiotis.gr/index.php?option=com_content&view=article&id=5592&Itemid=205"
+						"title": "Χρήσιμες Πληροφορίες & Τηλέφωνα Νομού Ηλείας",
+						"url": "http://pirgiotis.gr/index.php?option=com_content&view=article&id=5592&Itemid=205"
 				}
 				// {
 				// 	"title": "Κατηγορίες προσωπικών εξυπηρετήσεων / Personal Services",
@@ -239,7 +239,7 @@ app.views.headerView = (function() {
 						"url": "",
 						"tel": "6938094255",
 						"rating": 0
-					} ]
+					}]
 				}]
 			}
 		};
@@ -268,9 +268,14 @@ app.views.headerView = (function() {
 	 * @return {[type]} [description]
 	 */
 	function setupHandlers() {
-		$('.back-to-map').bind('touchend click', function(e) {
+		$('.back-to-map').bind('touchend click', function (e) {
 			e.preventDefault();
-			app.views.mapView.show();
+			e.stopImmediatePropagation();
+
+			window.location.href = "#/";
+
+			return false;
+			//app.views.mapView.show();
 		});
 	}
 
@@ -284,7 +289,7 @@ app.views.headerView = (function() {
 		 * [show description]
 		 * @return {[type]} [description]
 		 */
-		show: function() {
+		show: function () {
 			// render
 			_page = render({
 				data: getData()
@@ -303,7 +308,7 @@ app.views.headerView = (function() {
 		 * [hide description]
 		 * @return {[type]} [description]
 		 */
-		hide: function() {
+		hide: function () {
 			$('#' + _CONTAINER_NAME).empty();
 		}
 	};
