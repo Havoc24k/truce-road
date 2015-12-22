@@ -60,6 +60,11 @@ $(document).ready(function () {
         // app.views.headerView.show();
     });
 
+    app.router.register(['/info', '#info', '#/info', '#/infoView'], function (urlParts) {
+        app.views.headerView.show();
+        // app.views.headerView.show();
+    });
+
     ///////////////////
     // Execute route //
     ///////////////////

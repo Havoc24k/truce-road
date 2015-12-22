@@ -47,14 +47,19 @@ app.views.mapView = (function () {
 		controlText.style.paddingLeft = '5px';
 		controlText.style.paddingRight = '5px';
 		controlText.innerHTML = 'Πληροφορίες';
+		controlText.id = "info";
 		controlUI.appendChild(controlText);
 
-		controlUI.addEventListener('touchend', function () {
+		/*controlUI.addEventListener('touchend', function () {
 			app.views.headerView.show();
-		});
+		});*/
 
-		controlUI.addEventListener('click', function () {
+		/*controlUI.addEventListener('click', function () {
 			app.views.headerView.show();
+		});*/
+
+		$("#map").on("click", "#info", function(e){
+			window.location.href = "#/info";
 		});
 	}
 
