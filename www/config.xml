@@ -1,0 +1,128 @@
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0"
+    id="com.phonegap.truce-road" version="1.0.0">
+  <name>truce-road</name>
+  <description>Truce Road</description>
+  <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>
+  <content src="index.html"/>
+
+  <!-- PREFERENCES -->
+  <preference name="phonegap-version" value="cli-5.2.0"/>
+  <preference name="orientation" value="portrait"/>
+  <preference name="fullscreen" value="false"/>
+  <preference name="android-windowSoftInputMode" value="stateVisible" />
+  <preference name="target-device" value="universal"/>
+  <preference name="webviewbounce" value="true"/>
+  <preference name="prerendered-icon" value="true"/>
+  <preference name="stay-in-webview" value="true"/>
+  <preference name="ios-statusbarstyle" value="black-opaque"/>
+  <preference name="detect-data-types" value="true"/>
+  <preference name="exit-on-suspend" value="false"/>
+  <preference name="show-splash-screen-spinner" value="true"/>
+  <preference name="auto-hide-splash-screen" value="true"/>
+  <preference name="EnableViewportScale" value="true"/>
+  <preference name="MediaPlaybackRequiresUserAction" value="true"/>
+  <preference name="AllowInlineMediaPlayback" value="true"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <preference name="TopActivityIndicator" value="gray"/>
+  <preference name="KeyboardDisplayRequiresUserAction" value="true"/>
+  <preference name="HideKeyboardFormAccessoryBar" value="true"/>
+  <preference name="android-windowSoftInputMode" value="adjustResize" />
+  <preference name="SuppressesIncrementalRendering" value="true"/>
+  <preference name="android-minSdkVersion" value="16"/>
+  <preference name="android-maxSdkVersion" value="24" />
+  <preference name="android-targetSdkVersion" value="16" />
+  <preference name="android-installLocation" value="auto"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="10000"/>
+  <preference name="ErrorUrl" value=""/>
+  <preference name="BackgroundColor" value="#000000"/>
+  <preference name="KeepRunning" value="true"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="LoadingDialog" value=""/>
+  <preference name="LoadUrlTimeoutValue" value="20000"/>
+  <preference name="disable-cursor" value="true"/>
+  <preference name="StatusBarOverlaysWebView" value="true"/>
+
+  <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+  <gap:plugin name="cordova-plugin-console" source="npm"/>
+  <gap:plugin name="cordova-plugin-device" source="npm"/>
+  <gap:plugin name="cordova-plugin-dialogs" source="npm"/>
+  <gap:plugin name="cordova-plugin-inappbrowser" source="npm"/>
+  <gap:plugin name="cordova-plugin-network-information" source="npm"/>
+  <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
+  <gap:plugin name="cordova-plugin-vibration" source="npm"/>
+  <gap:plugin name="cordova-plugin-statusbar" source="npm"/>
+  <gap:plugin name="cordova-plugin-media" source="npm"/>
+  <gap:plugin name="cordova-plugin-camera" source="npm"/>
+  <gap:plugin name="cordova-plugin-media-capture" source="npm"/>
+  <gap:plugin name="cordova-plugin-file" source="npm"/>
+  <gap:plugin name="cordova-plugin-file-transfer" source="npm"/>
+  <gap:plugin name="cordova-plugin-geolocation" source="npm"/>
+  <!-- <gap:plugin name="org.apache.cordova.file-transfer"/> -->
+
+
+
+  <icon src="assets/icons/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
+  <icon src="assets/icons/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
+  <icon src="assets/icons/icon-72-hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>
+  <icon src="assets/icons/icon-96-xhdpi.png" gap:platform="android" gap:qualifier="xhdpi"/>
+  <icon src="icon.png"/>
+
+
+  <icon src="assets/icons/ios/Icon.png" gap:platform="ios" width="57" height="57"/>
+  <icon src="assets/icons/ios/Icon@2x.png" gap:platform="ios" width="114" height="114"/>
+  <icon src="assets/icons/ios/Icon-29.png" gap:platform="ios" width="29" height="29"/>
+  <icon src="assets/icons/ios/Icon-40.png" gap:platform="ios" width="40" height="40"/>
+  <icon src="assets/icons/ios/Icon-40@2x.png" gap:platform="ios" width="80" height="80"/>
+  <icon src="assets/icons/ios/Icon-50.png" gap:platform="ios" width="50" height="50"/>
+  <icon src="assets/icons/ios/Icon-58.png" gap:platform="ios" width="58" height="58"/>
+  <icon src="assets/icons/ios/Icon-60.png" gap:platform="ios" width="60" height="60"/>
+  <icon src="assets/icons/ios/Icon-72.png" gap:platform="ios" width="72" height="72"/>
+  <icon src="assets/icons/ios/Icon-72@2x.png" gap:platform="ios" width="144" height="144"/>
+  <icon src="assets/icons/ios/Icon-76.png" gap:platform="ios" width="76" height="76"/>
+  <icon src="assets/icons/ios/Icon-80.png" gap:platform="ios" width="80" height="80"/>
+  <icon src="assets/icons/ios/Icon-100.png" gap:platform="ios" width="100" height="100"/>
+  <icon src="assets/icons/ios/Icon-120.png" gap:platform="ios" width="120" height="120"/>
+  <icon src="assets/icons/ios/Icon-152.png" gap:platform="ios" width="152" height="152"/>
+  <icon src="assets/icons/ios/Icon-180@3.png" gap:platform="ios" width="180" height="180"/>
+
+  <icon src="assets/icons/android/drawable-ldpi/icon.png" gap:platform="android" gap:density="ldpi"/>
+  <icon src="assets/icons/android/drawable-mdpi/icon.png" gap:platform="android" gap:density="mdpi"/>
+  <icon src="assets/icons/android/drawable-hdpi/icon.png" gap:platform="android" gap:density="hdpi"/>
+  <icon src="assets/icons/android/drawable-xhdpi/icon.png" gap:platform="android" gap:density="xhdpi"/>
+  <icon src="assets/icons/android/drawable-xxhdpi/icon.png" gap:platform="android" gap:density="xxhdpi"/>
+  <icon src="assets/icons/android/drawable-xxxhdpi/icon.png" gap:platform="android" gap:density="xxxhdpi"/>
+
+
+  <gap:splash src="assets/splash_screens/android/drawable-ldpi/screen.png" gap:platform="android" gap:qualifier="port-ldpi"/>
+  <gap:splash src="assets/splash_screens/android/drawable-mdpi/screen.png" gap:platform="android" gap:qualifier="port-mdpi"/>
+  <gap:splash src="assets/splash_screens/android/drawable-hdpi/screen.png" gap:platform="android" gap:qualifier="port-hdpi"/>
+  <gap:splash src="assets/splash_screens/android/drawable-xhdpi/screen.png" gap:platform="android" gap:qualifier="port-xhdpi"/>
+  <gap:splash src="assets/splash_screens/android/drawable-xxhdpi/screen.png" gap:platform="android" gap:qualifier="port-xxhdpi"/>
+  <gap:splash src="assets/splash_screens/android/drawable-xxxhdpi/screen.png" gap:platform="android" gap:qualifier="port-xxxhdpi"/>
+
+  <gap:splash gap:platform="ios" height="768" src="assets/splash_screens/ios/Default.png" width="1004" />
+    <gap:splash src="assets/splash_screens/ios/Default~iphone.png" gap:platform="ios" width="320" height="480"/>
+    <gap:splash src="assets/splash_screens/ios/Default@2x~iphone_640x960.png" gap:platform="ios" width="640" height="960"/>
+    <gap:splash src="assets/splash_screens/ios/Default-568h@2x~iphone_640x1136.png" gap:platform="ios" width="640" height="1136"/>
+    <gap:splash src="assets/splash_screens/ios/Default-Portrait~ipad_768x1024.png" gap:platform="ios" width="768" height="1024 "/>
+    <gap:splash src="assets/splash_screens/ios/Default-Landscape~ipad_1024x748.png" gap:platform="ios" width="1024" height="768"/>
+    <gap:splash src="assets/splash_screens/ios/Default-Portrait@2x~ipad_1536x2048.png" gap:platform="ios" width="1536" height="2048"/>
+    <gap:splash src="assets/splash_screens/ios/Default-Landscape@2x~ipad_2048x1496.jpg" gap:platform="ios" width="2048" height="1536"/>
+    <gap:splash src="assets/splash_screens/ios/Default@2x~iphone_640x960.png"/>
+
+    <!-- iPhone 6 -->
+    <gap:splash src="assets/splash_screens/ios/Default-750@2x~iphone6-portrait_750x1334.png" gap:platform="ios" width="750" height="1334" />
+    <gap:splash src="assets/splash_screens/ios/Default-1242@3x~iphone6s-portrait_1242x2208.jpg" gap:platform="ios" width="1242" height="2208" />
+    <gap:splash src="assets/splash_screens/ios/Default-1242@3x~iphone6s-landscape_2208x1242.png" gap:platform="ios" width="2208" height="1242" />
+
+    <!-- Retina iPad -->
+    <gap:splash src="assets/splash_screens/ios/Default-Portrait@2x~ipad_1536x2048.jpg" gap:platform="ios" width="1536" height="2048" />
+    <gap:splash src="assets/splash_screens/ios/Default-Landscape@2x~ipad_2048x1536.jpg" gap:platform="ios" width="2048" height="1536" />
+
+    <!-- OTHER -->
+    <gap:splash src="assets/splash_screens/splash_800x1280.jpg" gap:platform="blackberry"/>
+    <gap:splash src="assets/splash_screens/splash_800x1280.jpg" gap:platform="winphone"/>
+
+    <access origin="*"/>
+</widget>
