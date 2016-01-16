@@ -163,8 +163,8 @@ app.views.mapView = (function () {
 		directionsService.route({
 			// origin: document.getElementById('start').value,
 			// destination: document.getElementById('end').value,
-			origin: "37.640531,21.630084",
-			destination: "37.883447,21.385127",
+			origin: "37.892640, 21.377459",//"37.640531,21.630084",
+			destination: "37.641852, 21.625148",//"37.883447,21.385127",
 			//waypoints: _waypoints,
 			optimizeWaypoints: true,
 			travelMode: google.maps.TravelMode.WALKING
@@ -221,8 +221,8 @@ app.views.mapView = (function () {
 		///////////////////////////////////
 		marker = new google.maps.Marker({
 			position: {
-				lat: 37.640236,
-				lng: 21.629419
+				lat: 37.64165865,//37.640236,
+				lng: 21.62521744//21.629419
 			},
 			label: "T",
 			map: map
@@ -247,8 +247,8 @@ app.views.mapView = (function () {
 		////////////////////////////////////
 		marker = new google.maps.Marker({
 			position: {
-				lat: 37.883447,
-				lng: 21.385127
+				lat: 37.89265966,//37.883447,
+				lng: 21.37747788//21.385127
 			},
 			label: "A",
 			map: map
